@@ -1,0 +1,132 @@
+.lifestyle {
+  position: relative;
+  padding-top: 73px;
+  background-color: $primaryColor;
+  color: #fff;
+  flex-shrink: 0;
+  overflow: hidden;
+
+  @media (min-width: $tablet) {
+    padding-bottom: 50px;
+  }
+
+  @media (min-width: $desktop) {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    width: 100vw;
+    min-width: 100vw;
+    height: calc(100vh - 95px);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 330px;
+
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 800px;
+    }
+
+    @media (min-width: $desktop) {
+      max-width: none;
+    }
+  }
+
+  &__textBox {
+    width: 260px;
+
+    @media (min-width: $tablet) {
+      width: 360px;
+    }
+
+    @media (min-width: $desktop) {
+      width: 55%;
+    }
+  }
+
+  &__heading {
+    margin: 30px 0 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    @media (min-width: $bigSmartphone) {
+      font-size: 16px;
+    }
+
+    @media (min-width: $desktop) {
+      margin: 50px 0 30px;
+      font-size: 20px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 35px;
+    font-size: 11px;
+    color: $secondaryFontColor;
+
+    @media (min-width: $desktop) {
+      font-size: 17px;
+    }
+  }
+
+  &__clock {
+    max-width: 345px;
+    opacity: 0;
+
+    @media (min-width: $desktop) {
+      max-width: 480px;
+    }
+
+    &--anim {
+      animation: roll-in-left 0.6s ease-out both;
+    }
+  }
+
+  &__scroll {
+    display: none;
+    text-transform: uppercase;
+    color: $fancyColor;
+    font-size: 20px;
+    font-weight: 700;
+    animation: scrollIconAnim 1s ease infinite alternate;
+
+    @media (min-width: $desktop) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &::before {
+        content: "\f8cc";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@keyframes roll-in-left {
+  0% {
+    transform: translateX(800px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scrollIconAnim {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(20px);
+  }
+}

@@ -1,0 +1,133 @@
+.section {
+  background-color: #fff;
+
+  @media (min-width: $desktop) {
+    width: 100vw;
+    min-width: 100vw;
+    height: calc(100vh - 95px);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @media (min-width: $desktop) {
+      justify-content: space-around;
+    }
+
+    &--reverse {
+      @media (min-width: $tablet) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+
+      @media (min-width: $desktop) {
+        justify-content: space-around;
+      }
+
+      & .section__img {
+        margin-right: 0;
+
+        @media (min-width: $tablet) {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  &__img {
+    margin-bottom: 30px;
+    max-width: 448px;
+    opacity: 0;
+
+    @media (min-width: $tablet) {
+      margin-right: 20px;
+      max-width: 355px;
+    }
+
+    @media (min-width: $desktop) {
+      margin: 0;
+      max-width: 448px;
+    }
+
+    &--anim {
+      animation: flip-in-hor-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+  }
+
+  &__list {
+    margin-top: 50px;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    transition: transform 0.2s ease-out;
+
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      transform: translateX(20px);
+    }
+
+    @media (min-width: $desktop) {
+      width: 80%;
+    }
+  }
+
+  &__icon {
+    font-size: 27px;
+    color: $thirdColor;
+  }
+
+  &__textItem {
+    width: 80%;
+  }
+
+  &__percentagesBox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__percentages {
+    width: 100%;
+    height: 5px;
+    background-color: $thirdColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s 1s ease-in;
+  }
+
+  &__percentagesValue {
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+@keyframes flip-in-hor-bottom {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotateX(-10deg);
+  }
+  70% {
+    transform: perspective(400px) rotateX(10deg);
+  }
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,113 @@
+.chooseColor {
+  text-align: center;
+  background-color: #363636;
+  color: #fff;
+
+  @media (min-width: $desktop) {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    min-width: 100vw;
+    height: calc(100vh - 95px);
+  }
+
+  &__itemsList {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    margin-bottom: 50px;
+    list-style: none;
+
+    @media (min-width: $bigTablet) {
+      grid-template-columns: repeat(3, minmax(242px, 1fr));
+    }
+
+    @media (min-width: $desktop) {
+      grid-template-columns: repeat(3, minmax(386px, 1fr));
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    height: 332px;
+    background-image: url("/public/items/green_clock.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    opacity: 0;
+
+    &--purpleBg {
+      background-image: url("/public/items/purple_clock.jpg");
+
+      & .chooseColor__colorName {
+        color: #cea9ff;
+      }
+    }
+
+    &--goldBg {
+      background-image: url("/public/items/gold_clock.jpg");
+
+      & .chooseColor__colorName {
+        color: #f3b560;
+      }
+    }
+
+    &--anim {
+      animation: flipInY 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+  }
+
+  &__typeClock {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  &__colorName {
+    margin-bottom: 20px;
+    color: #99ffee;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__price {
+    font-size: 21px;
+    font-weight: 700;
+  }
+
+  &__moreBtn {
+    padding: 15px 41px;
+    color: inherit;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 2px solid #fff;
+    border-radius: 28px;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+@keyframes flipInY {
+  0% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotateY(-10deg);
+  }
+  70% {
+    transform: perspective(400px) rotateY(10deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}

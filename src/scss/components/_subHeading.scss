@@ -1,0 +1,10 @@
+.subHeading {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: $subHeadingColor;
+  text-transform: uppercase;
+
+  &--gray {
+    color: #9b9b9b;
+  }
+}

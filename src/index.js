@@ -1,0 +1,9 @@
+import "./scss/style.scss";
+import "./js/mobileNavigation";
+import "./js/animations";
+import "./js/testimonialsSlider";
+import "./js/video";
+import "./js/gallerySlider";
+import "./js/horizontalScrollPage";
+import "./js/header";
+import "./js/experienceProgressAnim";

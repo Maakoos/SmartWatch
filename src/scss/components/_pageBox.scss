@@ -1,0 +1,7 @@
+.pageBox {
+  @media (min-width: $desktop) {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+  }
+}

@@ -1,0 +1,96 @@
+.testimonials {
+  text-align: center;
+  background-image: url("/public/bgImage2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+
+  @media (min-width: $desktop) {
+    display: flex;
+    align-items: center;
+    min-width: 100vw;
+    height: calc(100vh - 95px);
+  }
+
+  &__content {
+    margin: 0 auto;
+    max-width: 550px;
+    opacity: 0;
+
+    &--anim {
+      animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    }
+  }
+
+  &__slider {
+    margin-top: 50px;
+    min-height: 356px;
+
+    @media (min-width: $bigSmartphone) {
+      min-height: 275px;
+    }
+  }
+
+  &__topBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    margin: 0 50px 30px;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+
+    @media (min-width: $bigSmartphone) {
+      margin-left: 80px;
+      margin-right: 80px;
+    }
+
+    @media (min-width: $tablet) {
+      margin-left: 120px;
+      margin-right: 120px;
+    }
+
+    &--fadeIn {
+      animation: fade-in 1.2s ease;
+    }
+  }
+
+  &__btn {
+    background-color: transparent;
+    color: #d4b5ff;
+    font-size: 28px;
+    border: none;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: color 0.2s ease-in;
+
+    @media (min-width: $desktop) {
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__name {
+    margin-top: 20px;
+    color: $thirdColor;
+    font-size: 16px;
+    font-weight: 800;
+
+    &--fadeIn {
+      animation: fade-in 1.2s ease;
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
