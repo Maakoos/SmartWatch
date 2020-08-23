@@ -51,6 +51,7 @@
   }
 
   &__fullImg {
+    width: 80%;
     animation: scaleImg 1s 0.2s ease both;
 
     @media (min-width: $bigSmartphone) {
