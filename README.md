@@ -10,6 +10,7 @@ Website for practice with horizontal scroll section.
 - JavaScript
 - GIT
 - Webpack with plugins and loaders
+- NPM
 
 
 ## Available scripts 💾
